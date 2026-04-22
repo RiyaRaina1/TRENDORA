@@ -1,94 +1,91 @@
-# ✨ Trendora
+# Trendora
 
-<div align="center">
+AI-powered Instagram growth toolkit built with React, TypeScript, Vite, Tailwind CSS, and Supabase (optional).
 
-### 🚀 AI-Powered Instagram Growth Toolkit
+## Features
 
-Create viral captions, hooks, reel scripts, hashtags, carousels, calendars, and growth strategies with one modern platform.
+- Caption Generator (viral score)
+- Hook Generator
+- Reel Script Generator
+- Hashtag Intelligence
+- Trend Radar
+- Carousel Generator
+- 30-day Content Calendar
+- AI Growth Assistant chat
+- Saved Library
+- Pricing page scaffold
 
-![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?style=for-the-badge&logo=typescript)
-![Vite](https://img.shields.io/badge/Vite-Fast-purple?style=for-the-badge&logo=vite)
-![Tailwind](https://img.shields.io/badge/TailwindCSS-Styled-cyan?style=for-the-badge&logo=tailwindcss)
-![Supabase](https://img.shields.io/badge/Supabase-Backend-green?style=for-the-badge&logo=supabase)
+## Tech Stack
 
-</div>
+- React 19 + TypeScript
+- Vite 8
+- Tailwind CSS 3
+- Framer Motion
+- React Router 7
+- Supabase JS 2 (optional)
+- Sonner (toasts)
 
----
+## Local Development
 
-## 🌌 Overview
-
-**Trendora** is a premium AI-powered SaaS platform designed for creators, influencers, startups, agencies, and brands who want to grow faster on Instagram.
-
-Generate high-performing content ideas instantly using advanced AI tools inside a stunning futuristic dashboard with a sleek glassmorphism experience.
-
----
-
-## 🎯 Core Features
-
-### ✍️ Caption Generator
-Generate engaging, high-converting captions with viral scoring.
-
-### 🎣 Hook Generator
-Create scroll-stopping hooks designed to maximize retention.
-
-### 🎬 Reel Script Generator
-Get full reel scripts with scenes, timing, voiceover, CTA & hashtags.
-
-### 🔥 Hashtag Intelligence
-Smart hashtag sets based on reach, difficulty, and relevance.
-
-### 📈 Trend Radar
-Discover trending formats and viral opportunities in your niche.
-
-### 🖼️ Carousel Generator
-Generate 7-slide carousel post ideas with structure.
-
-### 📅 Content Calendar
-30-day posting strategy customized to your niche.
-
-### 🤖 AI Assistant
-Your personal Instagram strategist for growth planning.
-
-### 💾 Saved Library
-Save, organize, copy, and reuse generated content.
-
-### 💳 Pricing System
-Free / Pro / Elite plan-ready SaaS structure.
-
----
-
-## 🖥️ UI Experience
-
-Trendora is crafted with a premium modern frontend:
-
-- 🌙 Dark Neon Theme  
-- ✨ Glassmorphism Cards  
-- ⚡ Smooth Animations  
-- 📱 Fully Responsive  
-- 🎯 Clean Dashboard UX  
-- 🎨 Premium Micro Interactions  
-- 🚀 Fast Performance  
-
----
-
-## 🛠️ Tech Stack
+1. Install dependencies:
 
 ```bash
-Frontend:
-React 19
-TypeScript
-Vite
-Tailwind CSS
-Framer Motion
-React Router
+npm install
+```
 
-Backend:
-Supabase Auth
-Supabase Database
-Supabase Edge Functions
+2. Create env file:
 
-Other:
-Sonner Toasts
-Lucide Icons
-LocalStorage Demo Mode
+```bash
+cp .env.example .env
+```
+
+3. Add environment variables if you want real Supabase auth/storage:
+
+- VITE_SUPABASE_URL
+- VITE_SUPABASE_ANON_KEY
+
+If variables are missing, the app runs in demo mode with mock AI responses and local storage fallback.
+
+4. Start dev server:
+
+```bash
+npm run dev
+```
+
+5. Build for production:
+
+```bash
+npm run build
+```
+
+## Deploy to Vercel (Recommended)
+
+### One-time setup
+
+1. Push this repo to GitHub.
+2. In Vercel, click New Project and import the repository.
+3. Framework Preset: Vite (auto-detected).
+4. Build settings (already configured in vercel.json):
+   - Build Command: npm run build
+   - Output Directory: dist
+5. Add environment variables in Vercel Project Settings > Environment Variables:
+   - VITE_SUPABASE_URL
+   - VITE_SUPABASE_ANON_KEY
+6. Deploy.
+
+### Why this works for SPA routes
+
+The included vercel.json adds a fallback so direct refreshes on routes like /dashboard/captions do not 404.
+
+## Optional: Deploy with Vercel CLI
+
+```bash
+npm i -g vercel
+vercel
+vercel --prod
+```
+
+## Notes
+
+- Node.js 20+ is required.
+- If Supabase is not configured, auth/content still works in demo mode.
